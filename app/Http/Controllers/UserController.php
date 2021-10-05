@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\BaseCollection;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -28,7 +29,7 @@ class UserController extends Controller
     public function show($id)
     {
         return response()->json(
-            $this->user->getBaseInfo()->find($id),
+            new UserResource($this->user->find($id)),
             Response::HTTP_OK
         );
     }

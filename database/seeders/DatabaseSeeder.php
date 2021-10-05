@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)
             ->has(Album::factory(100))
-//            ->has(Photo::factory(1000))) // don't do this ))
             ->create();
 
 
